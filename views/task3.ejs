@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>task3</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+#error_message{
+    color: red;
+}
+#error{
+    text-align: center;
+}
+
+#home{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    position: absolute;
+    top: 30px;
+    /* text-decoration: none; */
+    color: #0056b3;
+    right: 100px;
+}
+
+</style>
+</head>
+<body>
+<a href="/" id="home">Home</a>
+<div class="container">
+    <h2>Login</h2>
+    <div id="error">
+        <% if (message) { %>
+            <span id="error_message"><%= message %></span>
+        <% } %>
+        <!-- <% if(message =="NULL") {}%> -->
+    </div>
+    <form action="/task3" method="post">
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
